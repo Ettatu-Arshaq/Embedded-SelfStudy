@@ -1,0 +1,8 @@
+# Ignore compiled files
+*.o
+*.exe
+*.out
+
+# Ignore binary data file
+studentdata.bin
+Temp.bin
