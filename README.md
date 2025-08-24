@@ -1,5 +1,11 @@
 # 🚀 Embedded Systems Self-Study Journey
 
+![GitHub last commit](https://img.shields.io/github/last-commit/Ettatu-Arshaq/Embedded-SelfStudy?style=for-the-badge&color=blue)
+![GitHub repo size](https://img.shields.io/github/repo-size/Ettatu-Arshaq/Embedded-SelfStudy?style=for-the-badge&color=green)
+![GitHub issues](https://img.shields.io/github/issues/Ettatu-Arshaq/Embedded-SelfStudy?style=for-the-badge&color=orange)
+![GitHub stars](https://img.shields.io/github/stars/Ettatu-Arshaq/Embedded-SelfStudy?style=for-the-badge&color=yellow)
+![GitHub forks](https://img.shields.io/github/forks/Ettatu-Arshaq/Embedded-SelfStudy?style=for-the-badge&color=purple)
+
 **Author:** Muhammad Arshaq (Ettatu-Arshaq)  
 **Goal:** Become job-ready for Embedded Systems roles by December 2025 through a mix of self-study & hands-on projects.
 
@@ -80,16 +86,16 @@ Located in [`Phase1_C/Workouts/C`](./Phase1_C/Workouts/C)
 ---
 
 ## 📦 Repository Structure
-
+```
 Embedded-SelfStudy/
 ├── Phase1_C/
-│ ├── Workouts/
-│ │ └── C/ # Practice programs
-│ └── StudentManager/ # Mini Project
-├── Phase2_MCU/ # Will be added later
-├── Phase3_RTOS/ # Will be added later
+│   ├── Workouts/
+│   │   └── C/   # Practice programs
+│   └── StudentManager/   # Mini Project
+├── Phase2_MCU/        # Will be added later
+├── Phase3_RTOS/       # Will be added later
 └── ...
-
+```
 
 ---
 
@@ -103,7 +109,7 @@ Embedded-SelfStudy/
 
 ## 📢 Connect
 - [GitHub Profile](https://github.com/Ettatu-Arshaq)  
-- [LinkedIn](www.linkedin.com/in/muhammad-arshaq-0b7455237/)  
+- [LinkedIn](https://www.linkedin.com/in/muhammad-arshaq-0b7455237/)  
 
 ---
 📅 **Started:** August 2025  
