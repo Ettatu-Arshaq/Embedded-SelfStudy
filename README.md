@@ -51,6 +51,8 @@ Located in [`Phase1_C/Workouts/C`](./Phase1_C/Workouts/C)
 - **Misc Examples**
   - [Example Program](./Phase1_C/Workouts/C/example.c)  
   - [Temp Runner](./Phase1_C/Workouts/C/tempCodeRunnerFile.c)  
+  - [Extern Keyword Example](./Phase1_C/Workouts/C/ext.c)  
+  - [Main Function Demo](./Phase1_C/Workouts/C/main.c)  
 
 ---
 
@@ -61,12 +63,16 @@ Located in [`Phase1_C/Workouts/C`](./Phase1_C/Workouts/C)
   - Add, search, delete, and view student records  
   - Demonstrates persistence with `.bin` files  
 
+- [`Student Manager Dynamic`](./Phase1_C/StudentManager/Student_Dynamic.c)  
+  - Enhanced Student Manager using dynamic memory allocation  
+
 - [`Bitwise Demo`](./Phase1_C/Bitwise_Demo)  
   - Practice on bitwise operators and manipulation in C  
   - Includes [Bitwise_Demo.c](./Phase1_C/Bitwise_Demo/Bitwise_Demo.c) with explanations  
 
-- [`Student Manager Dynamic`](./Phase1_C/StudentManager/Student_Dynamic.c)  
-  - Enhanced Student Manager using dynamic memory allocation  
+- [`LED Blinker`](./Phase1_C/LED_Blinker)  
+  - A simple LED blinking project (Code::Blocks project)  
+  - Includes [main.c](./Phase1_C/LED_Blinker/main.c), configs, and layout files  
 
 ---
 
@@ -97,24 +103,24 @@ Located in [`Phase1_C/Workouts/C`](./Phase1_C/Workouts/C)
 ---
 
 ## 📦 Repository Structure
-```
 Embedded-SelfStudy/
 ├── Phase1_C/
-│   ├── Workouts/
-│   │   └── C/   # Practice programs
-│   ├── Bitwise_Demo/   # Bitwise operator practice
-│   └── StudentManager/ # Mini Projects
-├── Phase2_MCU/        # Will be added later
-├── Phase3_RTOS/       # Will be added later
+│ ├── Workouts/
+│ │ └── C/ # Practice programs
+│ ├── Bitwise_Demo/ # Bitwise operator practice
+│ ├── StudentManager/ # Mini Projects
+│ └── LED_Blinker/ # LED Blinker project
+├── Phase2_MCU/ # Will be added later
+├── Phase3_RTOS/ # Will be added later
 └── ...
-```
+
 
 ---
 
 ## 🛠 Tools & Platforms
 - **Languages:** C, Python  
 - **Boards:** ESP32, STM32 Nucleo, Raspberry Pi  
-- **IDE/Tools:** Arduino IDE, PlatformIO, STM32CubeIDE, Proteus  
+- **IDE/Tools:** Arduino IDE, PlatformIO, STM32CubeIDE, Proteus, Code::Blocks  
 - **OS:** Windows + Linux basics  
 
 ---
