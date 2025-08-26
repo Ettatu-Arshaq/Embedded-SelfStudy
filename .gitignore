@@ -1,8 +1,26 @@
-# Ignore compiled files
+# Ignore compiled object & binary files
 *.o
-*.exe
 *.out
+*.exe
+*.elf
+*.bin
 
-# Ignore binary data file
+# Ignore backup and temp files
+*~
+*.swp
+*.bak
+*.tmp
+
+# Ignore Code::Blocks project-specific files
+*.depend
+*.layout
+
+# Ignore build directories
+/build/
+/dist/
+/Debug/
+/Release/
+
+# Ignore generated student data files
 studentdata.bin
 Temp.bin
