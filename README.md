@@ -45,17 +45,28 @@ Located in [`Phase1_C/Workouts/C`](./Phase1_C/Workouts/C)
 - **Pointers & Memory**
   - [Dynamic Memory Example](./Phase1_C/Workouts/C/memory.c)  
   - [Pointer Demo](./Phase1_C/Workouts/C/pointer.c)  
+  - [Pointer Basics](./Phase1_C/Workouts/C/pointer_basics.c)  
+  - [Pointer Arithmetic](./Phase1_C/Workouts/C/pointer_arthematic.c)  
+  - [Print Address](./Phase1_C/Workouts/C/print_adress.c)  
 - **Misc Examples**
   - [Example Program](./Phase1_C/Workouts/C/example.c)  
   - [Temp Runner](./Phase1_C/Workouts/C/tempCodeRunnerFile.c)  
 
 ---
 
-### 📂 Mini Project
-[`Student Record Manager`](./Phase1_C/StudentManager)  
-- C program using structures and binary file handling  
-- Add, search, delete, and view student records  
-- Demonstrates persistence with `.bin` files  
+### 📂 Mini Projects
+
+- [`Student Record Manager`](./Phase1_C/StudentManager)  
+  - C program using structures and binary file handling  
+  - Add, search, delete, and view student records  
+  - Demonstrates persistence with `.bin` files  
+
+- [`Bitwise Demo`](./Phase1_C/Bitwise_Demo)  
+  - Practice on bitwise operators and manipulation in C  
+  - Includes [Bitwise_Demo.c](./Phase1_C/Bitwise_Demo/Bitwise_Demo.c) with explanations  
+
+- [`Student Manager Dynamic`](./Phase1_C/StudentManager/Student_Dynamic.c)  
+  - Enhanced Student Manager using dynamic memory allocation  
 
 ---
 
@@ -91,7 +102,8 @@ Embedded-SelfStudy/
 ├── Phase1_C/
 │   ├── Workouts/
 │   │   └── C/   # Practice programs
-│   └── StudentManager/   # Mini Project
+│   ├── Bitwise_Demo/   # Bitwise operator practice
+│   └── StudentManager/ # Mini Projects
 ├── Phase2_MCU/        # Will be added later
 ├── Phase3_RTOS/       # Will be added later
 └── ...
