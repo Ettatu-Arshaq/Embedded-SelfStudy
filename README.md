@@ -7,19 +7,18 @@
 ![GitHub forks](https://img.shields.io/github/forks/Ettatu-Arshaq/Embedded-SelfStudy?style=for-the-badge&color=purple)
 
 **Author:** Muhammad Arshaq (Ettatu-Arshaq)  
-**Goal:** Become job-ready for Embedded Systems roles by December 2025 through a mix of self-study & hands-on projects.
+**Goal:** Become job-ready for Embedded Systems roles by **December 2025** through self-study and hands-on projects.
 
 ---
 
 ## 📅 Roadmap Overview
-This repository documents my entire **self-study roadmap** across multiple phases — from C programming basics to IoT and RTOS — following real embedded systems industry requirements.
+This repository documents my entire **Embedded Systems self-study path** — from C programming to IoT and RTOS — built phase by phase with practical examples and mini-projects.
 
 ---
 
 ## 📂 Phase 1: C Programming & Linux Fundamentals
 - ✅ Variables, loops, functions, arrays, strings  
 - ✅ Structures, file handling, pointers, DMA  
-
 ### 📂 Workouts (Practice Programs)
 Located in [`Phase1_C/Workouts/C`](./Phase1_C/Workouts/C)
 
@@ -74,14 +73,21 @@ Located in [`Phase1_C/Workouts/C`](./Phase1_C/Workouts/C)
   - A simple LED blinking project (Code::Blocks project)  
   - Includes [main.c](./Phase1_C/LED_Blinker/main.c), configs, and layout files  
 
+
+## 📂 Phase 2: Microcontroller Programming (PIC16F1519)
+Located in [`Phase2_MC_PIC16F1519`](./Phase2_MC_PIC16F1519)
+
+### 📁 Projects
+- [LED Blinker](./Phase2_MC_PIC16F1519/LED_Blinker)
+- [LED 7-Segment Display](./Phase2_MC_PIC16F1519/LED_7Segment.X)
+- [Multi-LED Patterns (GPIO only)](./Phase2_MC_PIC16F1519/Multi-LED%20Patterns%20(GPIO%20only).X)
+- [Timer-based Counter](./Phase2_MC_PIC16F1519/Workouts/Counter/Counter_using_timer.X)
+- [GPIO Trigger LED](./Phase2_MC_PIC16F1519/Workouts/LED_GPIO_TRIG.X)
+- [Timer0 Practice](./Phase2_MC_PIC16F1519/Workouts/Time0)
+- [Basic Blink Workouts](./Phase2_MC_PIC16F1519/Workouts/BLINK_led.X)
+
 ---
 
-## 📂 Phase 2: Microcontroller Programming *(Upcoming)*
-- PIC Microcontroller (MPLAB simulation)  
-- ARM Cortex-M (STM32) — GPIO, Timers, UART, SPI, I²C  
-- ESP32 & Arduino with real sensors (DHT11, IR, ultrasonic)  
-
----
 
 ## 📂 Phase 3: RTOS & Embedded Linux *(Upcoming)*
 - FreeRTOS tasks, queues, semaphores  
