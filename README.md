@@ -116,7 +116,12 @@ Embedded-SelfStudy/
 │ ├── Bitwise_Demo/ # Bitwise operator practice
 │ ├── StudentManager/ # Mini Projects
 │ └── LED_Blinker/ # LED Blinker project
-├── Phase2_MCU/ # Will be added later
+├── Phase2_MC_PIC16F1519/
+│ ├── Workouts/
+│ ├── LED_Blinker/
+│ ├── LED_7Segment.X/
+│ └── Multi-LED Patterns (GPIO only).X/
+└── ...
 ├── Phase3_RTOS/ # Will be added later
 └── ...
 
