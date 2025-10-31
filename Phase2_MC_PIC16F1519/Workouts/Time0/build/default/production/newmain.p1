@@ -478,8 +478,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;newmain.c: 33:     INTCON=0xA0;
 [e = _INTCON -> -> 160 `i `uc ]
 "34
-[; ;newmain.c: 34:     OPTION_REG=0x9f;
-[e = _OPTION_REG -> -> 159 `i `uc ]
+[; ;newmain.c: 34:     OPTION_REG=0x97;
+[e = _OPTION_REG -> -> 151 `i `uc ]
 "35
 [; ;newmain.c: 35:     TMR0=0;
 [e = _TMR0 -> -> 0 `i `uc ]
@@ -499,7 +499,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 256  ]
 [e :U 257 ]
 "42
-[; ;newmain.c: 42: return;
+[; ;newmain.c: 42:     return;
 [e $UE 254  ]
 "43
 [; ;newmain.c: 43: }

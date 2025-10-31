@@ -3295,7 +3295,7 @@ void main()
     ANSELAbits.ANSA0=0;
     TRISAbits.TRISA0=0;
     INTCON=0xA0;
-    OPTION_REG=0x9f;
+    OPTION_REG=0x97;
     TMR0=0;
 
     while(1)
@@ -3303,7 +3303,7 @@ void main()
         LATAbits.LATA0=0;
 
     }
-return;
+    return;
 }
 void __attribute__((picinterrupt(("")))) isr()
 {

@@ -7,7 +7,7 @@
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "4 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-"28 C:\Users\arsha\Downloads\Embedded-SelfStudy\Phase2_MC(PIC16F1519)\Workouts\Time0\newmain.c
+"28 C:\Users\arsha\Downloads\Embedded-SelfStudy\Phase2_MC_PIC16F1519\Workouts\Time0\newmain.c
 [v _main main `(v  1 e 1 0 ]
 "44
 [v _isr isr `II(v  1 e 1 0 ]
@@ -70,7 +70,7 @@
 [v _ANSELAbits ANSELAbits `VES59  1 e 1 @396 ]
 "5507
 [v _TMR0IF TMR0IF `VEb  1 e 0 @90 ]
-"28 C:\Users\arsha\Downloads\Embedded-SelfStudy\Phase2_MC(PIC16F1519)\Workouts\Time0\newmain.c
+"28 C:\Users\arsha\Downloads\Embedded-SelfStudy\Phase2_MC_PIC16F1519\Workouts\Time0\newmain.c
 [v _main main `(v  1 e 1 0 ]
 {
 "43
