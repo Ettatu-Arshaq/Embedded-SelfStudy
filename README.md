@@ -121,11 +121,48 @@ Located in [`Phase2_MC_PIC16F1519`](./Phase2_MC_PIC16F1519)
 
 ---
 
-## 📂 Phase 3: RTOS & Embedded Linux *(Upcoming)*
+## 📂 Phase 3: STM32 & RTOS (In Progress)
 
-* FreeRTOS tasks, queues, semaphores
-* Shell scripting, Makefiles
-* GPIO access in Linux (sysfs)
+Located in [`Phase3_STM32`](./Phase3_STM32)
+
+### 🧠 Topics Covered
+
+* Bare-metal driver development (GPIO, RCC, Registers)
+* STM32 architecture (ARM Cortex-M)
+* Interrupts, Timers, PWM
+* UART, SPI communication
+* Introduction to FreeRTOS (Tasks, Queues, Semaphores)
+
+---
+
+### 📁 Projects
+
+* [GPIO Register-Level Programming](./Phase3_STM32/Projects/)
+* [UART Communication (Polling & Interrupt)](./Phase3_STM32/Projects/)
+* [Timer-Based LED Control](./Phase3_STM32/Projects/)
+* [PWM Signal Generation](./Phase3_STM32/Projects/)
+* [RTOS LED Blinking (Multi-tasking)](./Phase3_STM32/Projects/)
+
+---
+
+### 📂 Workouts
+
+* [ADC LED Blink](./Phase3_STM32/Workouts/ADC_LED_BLINK.X)
+* [ADC Potentiometer Poll](./Phase3_STM32/Workouts/ADC_Potentiometer_poll.X)
+* [ADC Reader UART Select](./Phase3_STM32/Workouts/ADC_READER_UART_SELECT.X)
+* [Blink LED](./Phase3_STM32/Workouts/BLINK_led.X)
+* [Counter](./Phase3_STM32/Workouts/Counter/)
+* [EEPROM PIC](./Phase3_STM32/Workouts/EEPROM_PIC.X)
+* [EEPROM UART PIC](./Phase3_STM32/Workouts/EEPROM_UART_PIC.X)
+* [LED GPIO Trigger](./Phase3_STM32/Workouts/LED_GPIO_TRIG.X)
+* [SPI Master](./Phase3_STM32/Workouts/PIC_SPI.X)
+* [SPI Slave](./Phase3_STM32/Workouts/PIC_SPI_SLAVE.X)
+* [PWM Hardware](./Phase3_STM32/Workouts/PWM.X)
+* [PWM Software](./Phase3_STM32/Workouts/PWM_soft.X)
+* [Timer0](./Phase3_STM32/Workouts/Time0/)
+* [Timer1](./Phase3_STM32/Workouts/Timer1.X)
+* [Timer2](./Phase3_STM32/Workouts/Timer2.X)
+* [UART RX Program](./Phase3_STM32/Workouts/UART_Rx_PGM.X)
 
 ---
 
