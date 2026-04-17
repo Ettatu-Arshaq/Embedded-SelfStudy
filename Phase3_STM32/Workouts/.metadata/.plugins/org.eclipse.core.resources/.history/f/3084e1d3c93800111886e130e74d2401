@@ -1,0 +1,189 @@
+#include "FreeRTOS.h"
+#include "task.h"
+#include "queue.h"
+#include <stdint.h>
+#include "timers.h"
+#include <stdio.h>
+#include "semphr.h"
+
+#define RCC_AHB1ENR (*(volatile uint32_t*)0x40023830)
+#define GPIOD_MODER (*(volatile uint32_t*)0x40020C00)
+#define GPIOD_ODR   (*(volatile uint32_t*)0x40020C14)
+
+#define RCC_APB1ENR (*(volatile uint32_t*)0x40023840)
+#define RCC_APB2ENR (*(volatile uint32_t*)0x40023844)
+/* GPIOA */
+#define GPIOA_MODER (*(volatile uint32_t*)0x40020000)
+#define GPIOA_AFRL  (*(volatile uint32_t*)0x40020020)
+
+/* USART2 */
+#define USART2_SR   (*(volatile uint32_t*)0x40004400)
+#define USART2_DR   (*(volatile uint32_t*)0x40004404)
+#define USART2_BRR  (*(volatile uint32_t*)0x40004408)
+#define USART2_CR1  (*(volatile uint32_t*)0x4000440C)
+
+#define SYSCFG_EXTICR1 (*(volatile uint32_t*)0x40013808)
+#define EXTI_IMR       (*(volatile uint32_t*)0x40013C00)
+#define EXTI_RTSR      (*(volatile uint32_t*)0x40013C08)
+#define EXTI_PR        (*(volatile uint32_t*)0x40013C14)
+#define NVIC_ISER0     (*(volatile uint32_t*)0xE000E100)
+
+QueueHandle_t buttonQueue;
+QueueHandle_t uartQueue;
+SemaphoreHandle_t uartMutex;
+TimerHandle_t ledTimer;
+
+
+
+void EXTI0_Init(void)
+{
+    // Enable SYSCFG clock
+    RCC_APB2ENR |= (1 << 14);
+
+    // PA0 → EXTI0
+    SYSCFG_EXTICR1 &= ~(0xF << 0);
+
+    // Enable interrupt
+    EXTI_IMR |= (1 << 0);
+
+    // Rising edge trigger
+    EXTI_RTSR |= (1 << 0);
+
+    // Enable NVIC
+    NVIC_ISER0 |= (1 << 6);
+}
+void UART2_Init(void)
+{
+    // Enable clocks
+    RCC_AHB1ENR |= (1 << 0); // GPIOA
+    RCC_APB1ENR |= (1 << 17); // USART2
+
+    // Clear first
+    GPIOA_MODER &= ~(3 << 4);
+    GPIOA_MODER |=  (2 << 4);
+
+    // Clear AFRL
+    GPIOA_AFRL &= ~(0xF << 8);
+    GPIOA_AFRL |=  (7 << 8);
+
+    // Baudrate (assuming 16MHz → 9600)
+    USART2_BRR = 0x008B; // for 16 MHz → 115200
+
+    // Enable TX + USART
+    USART2_CR1 |= (1 << 3);
+    USART2_CR1 |= (1 << 13);
+}
+
+void GPIO_Init(void)
+{
+    RCC_AHB1ENR |= (1 << 3); // Enable GPIOD
+
+    GPIOD_MODER &= ~(3 << 24); // clear
+    GPIOD_MODER |=  (1 << 24); // output
+}
+
+void TimerCallback(TimerHandle_t xTimer)
+{
+    GPIOD_ODR ^= (1 << 12);
+}
+
+void UART_SendChar(char c)
+{
+    while(!(USART2_SR & (1 << 7))); // TXE
+    USART2_DR = c;
+}
+
+void UART_Print(char *str)
+{
+    while(*str)
+    {
+        UART_SendChar(*str++);
+    }
+}
+void HeapTask(void *params)
+{
+    char buffer[50];
+
+    while(1)
+    {
+        sprintf(buffer, "Heap: %lu\r\n", xPortGetFreeHeapSize());
+        UART_Print(buffer);
+
+        vTaskDelay(pdMS_TO_TICKS(1000));
+    }
+}
+
+
+void EXTI0_IRQHandler(void)
+{
+    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+
+    uint8_t event = 1;
+
+    xQueueSendFromISR(buttonQueue, &event, &xHigherPriorityTaskWoken);
+
+    EXTI_PR |= (1 << 0); // clear flag
+
+    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+}
+
+void ProcessTask(void *params)
+{
+    uint8_t event;
+
+    while(1)
+    {
+        if(xQueueReceive(buttonQueue, &event, portMAX_DELAY))
+        {
+            char msg[] = "Button Pressed\n";
+
+            xQueueSend(uartQueue, msg, portMAX_DELAY);
+        }
+    }
+}
+
+void UART_Task(void *params)
+{
+    char msg[20];
+
+    while(1)
+    {
+        if(xQueueReceive(uartQueue, msg, portMAX_DELAY))
+        {
+            xSemaphoreTake(uartMutex, portMAX_DELAY);
+
+            for(int i = 0; msg[i] != '\0'; i++)
+            {
+                UART_SendChar(msg[i]);
+            }
+
+            xSemaphoreGive(uartMutex);
+        }
+    }
+}
+
+int main(void)
+{
+    GPIO_Init();
+    UART2_Init();
+    EXTI0_Init();
+
+    buttonQueue = xQueueCreate(5, sizeof(uint8_t));
+    uartQueue   = xQueueCreate(5, sizeof(char[20]));
+    uartMutex   = xSemaphoreCreateMutex();
+
+    ledTimer = xTimerCreate("LED",
+                            pdMS_TO_TICKS(1000),
+                            pdTRUE,
+                            NULL,
+                            TimerCallback);
+
+    xTaskCreate(ProcessTask, "Process", 128, NULL, 2, NULL);
+    xTaskCreate(UART_Task, "UART", 128, NULL, 1, NULL);
+
+    xTimerStart(ledTimer, 0);
+
+    vTaskStartScheduler();
+
+    while(1);
+}

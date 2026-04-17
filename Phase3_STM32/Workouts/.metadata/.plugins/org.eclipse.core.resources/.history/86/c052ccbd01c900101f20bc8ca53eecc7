@@ -1,0 +1,77 @@
+#include <stdint.h>
+
+/* ---------------- RCC ---------------- */
+#define RCC_BASE        0x40023800UL
+#define RCC_AHB1ENR     (*(volatile uint32_t*)(RCC_BASE + 0x30))
+#define RCC_APB1ENR     (*(volatile uint32_t*)(RCC_BASE + 0x40))
+
+/* ---------------- GPIOD ---------------- */
+#define GPIOD_BASE      0x40020C00UL
+#define GPIOD_MODER     (*(volatile uint32_t*)(GPIOD_BASE + 0x00))
+#define GPIOD_ODR       (*(volatile uint32_t*)(GPIOD_BASE + 0x14))
+
+/* ---------------- TIM2 ---------------- */
+#define TIM2_BASE       0x40000000UL
+#define TIM2_CR1        (*(volatile uint32_t*)(TIM2_BASE + 0x00))
+#define TIM2_DIER       (*(volatile uint32_t*)(TIM2_BASE + 0x0C))
+#define TIM2_SR         (*(volatile uint32_t*)(TIM2_BASE + 0x10))
+#define TIM2_CNT        (*(volatile uint32_t*)(TIM2_BASE + 0x24))
+#define TIM2_PSC        (*(volatile uint32_t*)(TIM2_BASE + 0x28))
+#define TIM2_ARR        (*(volatile uint32_t*)(TIM2_BASE + 0x2C))
+
+/* ---------------- NVIC ---------------- */
+#define NVIC_ISER0      (*(volatile uint32_t*)(0xE000E100UL))
+
+/* TIM2 IRQ number = 28 */
+#define TIM2_IRQ_NUM    28
+
+/* ---------------- Function Prototypes ---------------- */
+void TIM2_IRQHandler(void);
+
+/* =======================================================
+   MAIN
+   ======================================================= */
+int main(void)
+{
+    /* 1) Enable clock for GPIOD */
+    RCC_AHB1ENR |= (1 << 3);   // bit3 = GPIODEN
+
+    /* 2) Set PD12 as output (MODER12 = 01) */
+    GPIOD_MODER &= ~(3 << (12 * 2)); // clear
+    GPIOD_MODER |=  (1 << (12 * 2)); // set to output
+
+    /* 3) Enable TIM2 clock */
+    RCC_APB1ENR |= (1 << 0);   // TIM2EN
+
+    /* 4) Timer configuration */
+    TIM2_PSC = 4399;           // 84MHz/8400 = 10kHz tick
+    TIM2_ARR = 4999;           // 500ms period (5000 ticks)
+
+    TIM2_CNT = 0;              // reset counter
+
+    TIM2_DIER |= 1;            // UIE = 1 (enable update interrupt)
+
+    /* 5) Enable NVIC interrupt */
+    NVIC_ISER0 |= (1 << TIM2_IRQ_NUM);
+
+    /* 6) Start timer */
+    TIM2_CR1 |= 1;             // CEN = 1
+
+    /* Infinite loop (work done in interrupt) */
+    while(1)
+    {
+        // CPU free, all work in ISR
+    }
+}
+
+/* =======================================================
+   TIM2 INTERRUPT HANDLER
+   ======================================================= */
+void TIM2_IRQHandler(void)
+{
+    if (TIM2_SR & 1)           // UIF flag set?
+    {
+        TIM2_SR &= ~1;         // clear update flag
+        GPIOD_ODR ^= (1 << 12); // toggle LED PD12
+    }
+}

@@ -1,0 +1,85 @@
+#include "FreeRTOS.h"
+#include "task.h"
+#include <stdint.h>
+#include "portable.h"
+#include "semphr.h"
+
+SemaphoreHandle_t buttonSemaphore;
+
+/* RCC */
+#define RCC_AHB1ENR (*(volatile uint32_t*)0x40023830)
+#define RCC_APB2ENR (*(volatile uint32_t*)0x40023844)
+#define SYSCFG_EXTICR1 (*(volatile uint32_t*)0x40013808)
+#define EXTI_IMR  (*(volatile uint32_t*)0x40013C00)
+#define EXTI_FTSR (*(volatile uint32_t*)0x40013C0C)
+#define EXTI_PR   (*(volatile uint32_t*)0x40013C14)
+#define NVIC_ISER0 (*(volatile uint32_t*)0xE000E100)
+
+
+/* GPIOD */
+#define GPIOD_MODER (*(volatile uint32_t*)0x40020C00)
+#define GPIOD_ODR   (*(volatile uint32_t*)0x40020C14)
+#define GPIOA_MODER (*(volatile uint32_t*)0x40020000)
+
+
+void GPIO_Init(void)
+{
+
+    // Enable GPIOD clock
+    RCC_AHB1ENR |= (1 << 3);
+    // Set PD12 and PD13 as output
+    GPIOD_MODER |= (1 << 24); // PD12
+    GPIOD_MODER |= (1 << 26); // PD13
+
+//    User-Button
+    RCC_AHB1ENR |= (1 << 0); // Enable GPIOA FOR BUTTON
+    GPIOA_MODER &= ~(3 << 0); // PA0 = input mode
+    RCC_APB2ENR |= (1 << 14); // Enable SYSCFG clock
+
+}
+
+void User_ButtonInit(){
+
+	SYSCFG_EXTICR1 &= ~(0xF << 0); // EXTI0 -> PA0
+	// Unmask EXTI0
+	EXTI_IMR |= (1 << 0);
+
+	// Trigger on falling edge (button press)
+	EXTI_FTSR |= (1 << 0);
+	NVIC_ISER0 |= (1 << 6); // EXTI0 IRQ number = 6
+}
+void EXTI0_IRQHandler(void)
+{
+    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+
+    // Clear interrupt pending bit
+    EXTI_PR |= (1 << 0);
+
+    xSemaphoreGiveFromISR(buttonSemaphore, &xHigherPriorityTaskWoken);
+
+    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+}
+
+void Task2_Handler(void *params)
+{
+    while(1)
+    {
+        if(xSemaphoreTake(buttonSemaphore, portMAX_DELAY))
+        {
+            GPIOD_ODR ^= (1 << 12); // Toggle LED
+        }
+    }
+}
+
+int main(void)
+{
+	buttonSemaphore = xSemaphoreCreateBinary();
+    // Hardware init (clock, GPIO etc)
+	GPIO_Init();
+	User_ButtonInit();
+    xTaskCreate(Task2_Handler, "Task2", 128, NULL, 1, NULL);
+
+    vTaskStartScheduler();
+
+    while(1); // should never reach here
+}

@@ -1,0 +1,19 @@
+#include "FreeRTOS.h"
+#include "task.h"
+
+void task1(void *params)
+{
+    while(1)
+    {
+        // your code
+    }
+}
+
+int main(void)
+{
+    xTaskCreate(task1, "Task1", 100, NULL, 1, NULL);
+
+    vTaskStartScheduler();
+
+    while(1);
+}

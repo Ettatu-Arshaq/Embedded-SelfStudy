@@ -1,0 +1,47 @@
+#include "FreeRTOS.h"
+#include "task.h"
+#include "queue.h"
+#include <stdint.h>
+#include "timers.h"
+
+/* RCC */
+#define RCC_AHB1ENR (*(volatile uint32_t*)0x40023830)
+#define RCC_APB1ENR (*(volatile uint32_t*)0x40023840)
+
+/* GPIOA */
+#define GPIOA_MODER (*(volatile uint32_t*)0x40020000)
+#define GPIOA_AFRL  (*(volatile uint32_t*)0x40020020)
+
+
+
+
+
+TimerHandle_t myTimer;
+/* UART INIT */
+
+
+void TimerCallback(TimerHandle_t xTimer)
+{
+    GPIOD_ODR ^= (1 << 12); // Toggle LED
+}
+int main(void)
+{
+    GPIO_Init();
+
+    myTimer = xTimerCreate("LED Timer",
+                           pdMS_TO_TICKS(500),
+                           pdTRUE,
+                           NULL,
+                           TimerCallback);
+
+    if(myTimer == NULL)
+    {
+        while(1);
+    }
+
+    xTimerStart(myTimer, 0);
+
+    vTaskStartScheduler();
+
+    while(1);
+}

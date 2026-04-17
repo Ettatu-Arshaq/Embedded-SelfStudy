@@ -1,0 +1,21 @@
+#include "FreeRTOS.h"
+#include "task.h"
+
+void LED_Task(void *params)
+{
+    while(1)
+    {
+        // toggle LED here
+    }
+}
+
+int main(void)
+{
+    // your clock + GPIO init
+
+    xTaskCreate(LED_Task, "LED", 128, NULL, 1, NULL);
+
+    vTaskStartScheduler();
+
+    while(1);
+}
