@@ -1,5 +1,0 @@
-../Src/main.c:22:6:UART2_Init	4	static
-../Src/main.c:44:6:UART_SendChar	16	static
-../Src/main.c:50:6:Task1_Handler	24	static
-../Src/main.c:69:6:Task2_Handler	24	static
-../Src/main.c:88:5:main	16	static
