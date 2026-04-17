@@ -137,23 +137,21 @@ Located in [`Phase3_STM32`](./Phase3_STM32)
 
 ### 📁 Projects
 
-* [GPIO Register-Level Programming](./Phase3_STM32/Projects/)
-* [UART Communication (Polling & Interrupt)](./Phase3_STM32/Projects/)
-* [Timer-Based LED Control](./Phase3_STM32/Projects/)
-* [PWM Signal Generation](./Phase3_STM32/Projects/)
-* [RTOS LED Blinking (Multi-tasking)](./Phase3_STM32/Projects/)
+* [FreeRTOS Button Event System](./Phase3_STM32/RTOS_MiniProject/)
+* [STM32 Smart Control System)](./Phase3_STM32/UART_Based_Smart_Control_System_ISR/)
+
 
 ---
 
 ### 📂 Workouts
 
-* [ADC LED Blink](./Phase3_STM32/Workouts/ADC_LED_BLINK.X)
-* [ADC Potentiometer Poll](./Phase3_STM32/Workouts/ADC_Potentiometer_poll.X)
-* [ADC Reader UART Select](./Phase3_STM32/Workouts/ADC_READER_UART_SELECT.X)
-* [Blink LED](./Phase3_STM32/Workouts/BLINK_led.X)
+* [ADC LED Blink](./Phase3_STM32/Workouts/ADC_LED_BLINK)
+* [ADC Potentiometer Poll](./Phase3_STM32/Workouts/ADC_Potentiometer_poll)
+* [ADC Reader UART Select](./Phase3_STM32/Workouts/ADC_READER_UART_SELECT)
+* [Blink LED](./Phase3_STM32/Workouts/BLINK_led)
 * [Counter](./Phase3_STM32/Workouts/Counter/)
 * [EEPROM PIC](./Phase3_STM32/Workouts/EEPROM_PIC.X)
-* [EEPROM UART PIC](./Phase3_STM32/Workouts/EEPROM_UART_PIC.X)
+* [EEPROM UART PIC](./Phase3_STM32/Workouts/EEPROM_UART_PIC)
 * [LED GPIO Trigger](./Phase3_STM32/Workouts/LED_GPIO_TRIG.X)
 * [SPI Master](./Phase3_STM32/Workouts/PIC_SPI.X)
 * [SPI Slave](./Phase3_STM32/Workouts/PIC_SPI_SLAVE.X)
