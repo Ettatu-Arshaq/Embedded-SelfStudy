@@ -89,7 +89,12 @@ Playback pause/resume with RA1.
 
 📸 Demo
 
-👉 (Insert Proteus screenshot or GIF of LEDs running here)
+<img width="400" height="200" alt="Screenshot 2026-04-18 132351" src="https://github.com/user-attachments/assets/5a998101-a216-457a-a5c2-ba52d8a9d2ad" />
+
+<img width="400" height="200" alt="Screenshot 2026-04-18 132404" src="https://github.com/user-attachments/assets/9e115b83-5527-452c-9055-525c27e2a751" />
+
+<img width="400" height="200" alt="Screenshot 2026-04-18 132429" src="https://github.com/user-attachments/assets/69963c15-fa32-4698-a5d0-ac207ef50605" />
+
 
 📖 Learning Outcomes
 
