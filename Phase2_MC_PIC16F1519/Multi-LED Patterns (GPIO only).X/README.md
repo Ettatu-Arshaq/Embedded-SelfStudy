@@ -36,14 +36,19 @@ Button on RA1 used to pause/resume playback
 🛠️ Hardware Setup (Proteus Simulation)
 
 🔹 LED Wiring
+
 RB0–RB3 → 330 Ω → LED → GND
 
 🔹 Buttons
+
 RA0 → Running Light
+
 RA1 → Independent Blinkers (200 ms & 500 ms)
+
 RA2 → Pattern Player
 
 🔹 Register Setup
+
 ANSELB = 0x00;   // PORTB as digital  
 TRISB  = 0x00;   // PORTB as output  
 LATB   = 0x00;   // Clear LEDs  
@@ -71,11 +76,15 @@ LEDs move left-to-right and back:
 0001 → 0010 → 0100 → 1000 → 0100 → 0010 → …
 
 🔹 Case 2: RA1 Pressed → Independent Blinkers
+
 RB0 toggles every 200 ms
+
 RB1 toggles every 500 ms
 
 🔹 Case 3: RA2 Pressed → Pattern Player
+
 Displays array sequence
+
 Playback pause/resume with RA1
 
 ---
@@ -84,14 +93,18 @@ Playback pause/resume with RA1
 
 <img width="400" height="200" alt="Screenshot 2026-04-18 132404" src="https://github.com/user-attachments/assets/9e115b83-5527-452c-9055-525c27e2a751" /> 
 
+
 <img width="400" height="200" alt="Screenshot 2026-04-18 132429" src="https://github.com/user-attachments/assets/69963c15-fa32-4698-a5d0-ac207ef50605" />
 
 ---
 📖 Learning Outcomes
 
 Controlled multiple GPIO outputs with PIC
+
 Used software counters to simulate timers
+
 Practiced bitwise operations for LED sequences
+
 Integrated button input control for real-time interaction
 
 ---
