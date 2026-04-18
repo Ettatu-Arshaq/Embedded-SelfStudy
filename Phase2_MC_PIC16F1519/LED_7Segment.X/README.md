@@ -57,7 +57,7 @@ Observe the 7-segment display output
 ---
 📸 Output
 
-<img width="1920" height="1080" alt="Screenshot 2026-04-18 123511" src="https://github.com/user-attachments/assets/c8a7ac38-ade1-4730-9a22-4ea5313b986c" />
+<img width="560" height="480" alt="Screenshot 2026-04-18 123511" src="https://github.com/user-attachments/assets/c8a7ac38-ade1-4730-9a22-4ea5313b986c" />
 
 <img width="1920" height="1080" alt="Screenshot 2026-04-18 123522" src="https://github.com/user-attachments/assets/483e70fc-0f72-42d3-a756-44cc9f498d74" />
 
