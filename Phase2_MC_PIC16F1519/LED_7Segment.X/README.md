@@ -61,6 +61,34 @@ Observe the 7-segment display output
 <img width="1920" height="1080" alt="Screenshot 2026-04-18 123522" src="https://github.com/user-attachments/assets/483e70fc-0f72-42d3-a756-44cc9f498d74" />
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Displays digits (0–9) sequentially or a fixed number
 Segments illuminate according to binary patterns
 💡 Why This Project Matters
