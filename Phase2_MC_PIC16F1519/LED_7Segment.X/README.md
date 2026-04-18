@@ -46,7 +46,7 @@ TRISA = 0;   // Configure PORTA as output
 ANSELA = 0;  // Set PORTA as digital
 
 The microcontroller sends binary patterns to the display pins to illuminate the correct segments.
-
+---
 ▶️ How to Run
 git clone https://github.com/Ettatu-Arshaq/Embedded-SelfStudy.git
 cd Embedded-SelfStudy/Phase2_PIC/LED_7Segment.X
@@ -54,6 +54,7 @@ Open the project in MPLAB X IDE
 Build using XC8 compiler
 Flash to the PIC microcontroller
 Observe the 7-segment display output
+---
 📸 Output
 
 <img width="1920" height="1080" alt="Screenshot 2026-04-18 123511" src="https://github.com/user-attachments/assets/c8a7ac38-ade1-4730-9a22-4ea5313b986c" />
@@ -61,36 +62,9 @@ Observe the 7-segment display output
 <img width="1920" height="1080" alt="Screenshot 2026-04-18 123522" src="https://github.com/user-attachments/assets/483e70fc-0f72-42d3-a756-44cc9f498d74" />
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Displays digits (0–9) sequentially or a fixed number
 Segments illuminate according to binary patterns
+---
 💡 Why This Project Matters
 
 This project demonstrates:
@@ -101,14 +75,20 @@ Foundation for display systems used in:
 Digital clocks
 Measurement devices
 Embedded UI systems
+
+---
 🚀 Future Improvements
 Multi-digit display using multiplexing
 Timer-based refresh for stable display
 Scrolling numbers / animation effects
+
+---
 🏁 Learning Outcome
 Strong understanding of GPIO-based device control
 Ability to convert logic into hardware behavior
 Foundation for advanced display interfacing
+
+---
 🏆 Author
 
 Muhammad Arshaq
