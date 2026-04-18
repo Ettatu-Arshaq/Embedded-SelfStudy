@@ -28,13 +28,18 @@ This is part of Phase 2 mini projects from my Embedded Systems self-study roadma
 ## 📂 Data Structure
 
 #define LED1 LATAbits.LATA0
+
 #define LED2 LATAbits.LATA1
 
 volatile unsigned long ms_tick = 0;
+
 unsigned long last_toggle1 = 0;
+
 unsigned long last_toggle2 = 0;
 
-ms_tick increments every millisecond in Timer0 ISR. LEDs toggle based on software counters.
+ms_tick increments every millisecond in Timer0 ISR. 
+
+LEDs toggle based on software counters.
 
 ---
 
