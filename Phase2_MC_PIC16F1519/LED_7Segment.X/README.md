@@ -46,6 +46,7 @@ TRISA = 0;   // Configure PORTA as output
 ANSELA = 0;  // Set PORTA as digital
 
 The microcontroller sends binary patterns to the display pins to illuminate the correct segments.
+
 ---
 ▶️ How to Run
 git clone https://github.com/Ettatu-Arshaq/Embedded-SelfStudy.git
@@ -54,16 +55,18 @@ Open the project in MPLAB X IDE
 Build using XC8 compiler
 Flash to the PIC microcontroller
 Observe the 7-segment display output
+
 ---
 📸 Output
 
-<img width="200" height="150" alt="Screenshot 2026-04-18 123511" src="https://github.com/user-attachments/assets/c8a7ac38-ade1-4730-9a22-4ea5313b986c" />
+<img width="400" height="200" alt="Screenshot 2026-04-18 123511" src="https://github.com/user-attachments/assets/c8a7ac38-ade1-4730-9a22-4ea5313b986c" />
 
-<img width="200" height="150" alt="Screenshot 2026-04-18 123522" src="https://github.com/user-attachments/assets/483e70fc-0f72-42d3-a756-44cc9f498d74" />
+<img width="400" height="200" alt="Screenshot 2026-04-18 123522" src="https://github.com/user-attachments/assets/483e70fc-0f72-42d3-a756-44cc9f498d74" />
 
 
 Displays digits (0–9) sequentially or a fixed number
 Segments illuminate according to binary patterns
+
 ---
 💡 Why This Project Matters
 
