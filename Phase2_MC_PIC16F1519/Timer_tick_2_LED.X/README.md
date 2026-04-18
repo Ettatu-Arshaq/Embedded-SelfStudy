@@ -79,8 +79,11 @@ LED2 (RA1) blinks every 200 ms
 
 
 Time(ms): 0    LED1: ON   LED2: ON
+
 Time(ms): 200  LED1: ON   LED2: OFF
+
 Time(ms): 400  LED1: ON   LED2: ON
+
 Time(ms): 500  LED1: OFF  LED2: ON
 
 LEDs toggle based on independent software counters.
