@@ -33,7 +33,7 @@ It is part of **Phase 2 (PIC Microcontroller Projects)** in my Embedded Systems 
 ## 🔧 Implementation Details
 
 ### Segment Mapping
-```c
+
 uint8_t segment[10] = {
   0x3F, 0x06, 0x5B, 0x4F, 0x66,
   0x6D, 0x7D, 0x07, 0x7F, 0x6F
@@ -55,6 +55,10 @@ Build using XC8 compiler
 Flash to the PIC microcontroller
 Observe the 7-segment display output
 📸 Output
+
+<img width="1920" height="1080" alt="Screenshot 2026-04-18 123511" src="https://github.com/user-attachments/assets/c8a7ac38-ade1-4730-9a22-4ea5313b986c" />
+
+<img width="1920" height="1080" alt="Screenshot 2026-04-18 123522" src="https://github.com/user-attachments/assets/483e70fc-0f72-42d3-a756-44cc9f498d74" />
 
 
 Displays digits (0–9) sequentially or a fixed number
