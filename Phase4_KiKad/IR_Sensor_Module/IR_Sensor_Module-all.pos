@@ -1,0 +1,15 @@
+### Footprint positions - created on 2026-04-24T15:49:05 ###
+### Printed by KiCad version 10.0.1
+## Unit = mm, Angle = deg.
+## Side : All
+# Ref     Val                Package                                           PosX       PosY       Rot  Side
+D1        IR26-21C_L110_TR8  LED_1206_3216Metric                           130.3200   -72.0500  -90.0000  bottom
+J1        Conn_01x03_Pin     PinHeader_1x03_P1.00mm_Vertical               160.6100   -74.9700    0.0000  bottom
+R3        470                R_0805_2012Metric_Pad1.20x1.40mm_HandSolder   136.0400   -74.7100  -90.0000  bottom
+U1        LM358              SOIC-8_5.3x6.2mm_P1.27mm                      147.1350   -74.9700  -90.0000  bottom
+D2        D_Photo_Filled     LED_1206_3216Metric                           130.3200   -72.0500   90.0000  top
+D3        IR26-21C_L110_TR8  LED_1206_3216Metric                           130.5700   -78.3600   90.0000  top
+R1        470                R_0603_1608Metric_Pad0.98x0.95mm_HandSolder   135.5800   -78.1900   90.0000  top
+R2        10k                R_0805_2012Metric_Pad1.20x1.40mm_HandSolder   135.2200   -72.1800  -90.0000  top
+R4        10k                Potentiometer_ACP_CA14-VSMD_Vertical          148.6450   -74.4400    0.0000  top
+## End

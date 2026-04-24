@@ -1,0 +1,11 @@
+Plotted to 'C:\Users\arsha\KiKad\IR_Sensor_Module\IR_Sensor_Module-F_Cu.gbr'.
+Plotted to 'C:\Users\arsha\KiKad\IR_Sensor_Module\IR_Sensor_Module-B_Cu.gbr'.
+Plotted to 'C:\Users\arsha\KiKad\IR_Sensor_Module\IR_Sensor_Module-F_Paste.gbr'.
+Plotted to 'C:\Users\arsha\KiKad\IR_Sensor_Module\IR_Sensor_Module-B_Paste.gbr'.
+Plotted to 'C:\Users\arsha\KiKad\IR_Sensor_Module\IR_Sensor_Module-F_Silkscreen.gbr'.
+Plotted to 'C:\Users\arsha\KiKad\IR_Sensor_Module\IR_Sensor_Module-B_Silkscreen.gbr'.
+Plotted to 'C:\Users\arsha\KiKad\IR_Sensor_Module\IR_Sensor_Module-F_Mask.gbr'.
+Plotted to 'C:\Users\arsha\KiKad\IR_Sensor_Module\IR_Sensor_Module-B_Mask.gbr'.
+Plotted to 'C:\Users\arsha\KiKad\IR_Sensor_Module\IR_Sensor_Module-Edge_Cuts.gbr'.
+Created Gerber job file 'C:\Users\arsha\KiKad\IR_Sensor_Module\IR_Sensor_Module-job.gbrjob'.
+Info: Done.

@@ -1,0 +1,13 @@
+### Footprint positions - created on 2026-04-19T13:47:48 ###
+### Printed by KiCad version 10.0.1
+## Unit = mm, Angle = deg.
+## Side : All
+# Ref     Val             Package                                                PosX       PosY       Rot  Side
+C1        680uf           C_0201_0603Metric                                  191.9800   -76.1000  180.0000  top
+C2        220uf           C_0201_0603Metric                                  196.8000   -60.7500   90.0000  top
+D1        1N5822          D_DO-201AD_P15.24mm_Horizontal                     204.2000   -80.3800  -90.0000  top
+J1        Barrel_Jack     BarrelJack_SwitchcraftConxall_RAPC10U_Horizontal   193.6850   -65.1000    0.0000  top
+J2        Conn_01x02_Pin  JWT_A3963_1x02_P3.96mm_Vertical                    203.2500   -64.0325   90.0000  top
+L1        33uH            L_6.3x6.3_H3                                       204.6500   -72.5750    0.0000  top
+U1        LM2596S-ADJ     TO-263-5_TabPin3                                   183.0500   -88.1750  180.0000  top
+## End

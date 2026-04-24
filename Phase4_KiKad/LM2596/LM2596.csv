@@ -1,0 +1,8 @@
+"Id";"Designator";"Footprint";"Quantity";"Designation";"Supplier and ref";
+1;"C1";"C_0201_0603Metric";1;"680uf";;;
+2;"C2";"C_0201_0603Metric";1;"220uf";;;
+3;"D1";"D_DO-201AD_P15.24mm_Horizontal";1;"1N5822";;;
+4;"J1";"BarrelJack_SwitchcraftConxall_RAPC10U_Horizontal";1;"Barrel_Jack";;;
+5;"J2";"JWT_A3963_1x02_P3.96mm_Vertical";1;"Conn_01x02_Pin";;;
+6;"L1";"L_6.3x6.3_H3";1;"33uH";;;
+7;"U1";"TO-263-5_TabPin3";1;"LM2596S-ADJ";;;
