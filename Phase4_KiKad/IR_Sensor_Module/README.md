@@ -72,9 +72,11 @@ The module works based on **IR reflection**:
 
 ---
 
-## 📷 Schematic
+## 📷 PCB
 
-> *(Add your schematic screenshot here)*
+<img width="720" height="480" alt="Screenshot 2026-04-24 154706" src="https://github.com/user-attachments/assets/16aa0f81-dc2d-4b3a-94d0-a4ab86ca77b5" />
+
+<img width="720" height="480" alt="Screenshot 2026-04-24 154718" src="https://github.com/user-attachments/assets/2f279a51-82f3-4052-9267-fa19fd157f47" />
 
 ---
 
