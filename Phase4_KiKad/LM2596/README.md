@@ -67,9 +67,10 @@ The **LM2596** operates as a **switching regulator (buck converter)**:
 
 ---
 
-## 📷 Schematic
+## 📷 PCB
 
-> *(Add your schematic image here)*
+<img width="720" height="480" alt="Screenshot 2026-04-24 193104" src="https://github.com/user-attachments/assets/f6d2b321-857b-4d1a-aade-1db706e41665" />
+
 
 ---
 
